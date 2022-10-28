@@ -39,12 +39,6 @@ class _Counter extends State<Counter> {
     });
   }
 
-  void decrementCounter() {
-    setState(() {
-      counter--;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -60,9 +54,8 @@ class _Counter extends State<Counter> {
         ),
         CounterDisplay(counter: counter),
         Wrap(direction: Axis.horizontal, spacing: 20, children: [
-          SubtractButton(onPress: decrementCounter),
+          removeButton(),
           AddButton(onPress: incrementCounter),
-          removeButton()
         ])
       ],
     );
@@ -103,20 +96,6 @@ class AddButton extends StatelessWidget {
     return Button(
       onPressed: onPress,
       child: const Icon(Icons.add),
-    );
-  }
-}
-
-class SubtractButton extends StatelessWidget {
-  const SubtractButton({super.key, required this.onPress});
-
-  final VoidCallback onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Button(
-      onPressed: onPress,
-      child: const Icon(Icons.remove),
     );
   }
 }
