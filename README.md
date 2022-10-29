@@ -1,4 +1,4 @@
-# todo
+# Counter
 
 A new Flutter project.
 
